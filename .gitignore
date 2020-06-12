@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/easypack-dsl
+easypack-dsl.so
+easypack-dsl.dylib
+easypack-dsl.dll
+easypack-dsl.a
+easypack-dsl.lib
+easypack-dsl-test-*
+*.exe
+*.o
+*.obj
+*.lst
