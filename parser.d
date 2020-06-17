@@ -44,4 +44,12 @@ struct EPDSLInstance {
         }
         return null;
     }
+    public EPDSLDecl[] getDecls(string name) {
+        EPDSLDecl[] res;
+        foreach (EPDSLDecl decl; decls)
+        {
+            if(decl.name == name) res ~= [decl];
+        }
+        return res;
+    }
 }
