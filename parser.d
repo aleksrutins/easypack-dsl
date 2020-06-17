@@ -1,4 +1,4 @@
-module dsl.dsl;
+module dsl.parser;
 import std.string;
 
 struct EPDSLDecl {
