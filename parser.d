@@ -5,7 +5,7 @@ struct EPDSLDecl {
     private string[string] opts;
     public string name;
     public string value;
-    public string getVal(string key) {
+    public string getProp(string key) {
         return opts[key];
     }
 }
