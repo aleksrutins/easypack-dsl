@@ -9,9 +9,11 @@ struct EPDSLDecl {
         return opts[key];
     }
 }
-class EPDSLInstance {
+struct EPDSLInstance {
     public EPDSLDecl[] decls;
     public static EPDSLInstance parse(string data) {
+        EPDSLInstance inst;
+        EPDSLDecl[] decls = [];
         foreach(line; splitLines(data)) {
             EPDSLDecl decl;
             string[] parts = line.split(" ");
@@ -30,6 +32,9 @@ class EPDSLInstance {
             for(int i = 0; i < optKeys.length; i++) {
                 decl.opts[optKeys[i]] = optVals[i];
             }
+            decls ~= [decl];
         }
+        inst.decls = decls;
+        return inst;
     }
 }
