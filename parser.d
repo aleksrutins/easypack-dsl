@@ -10,11 +10,12 @@ struct EPDSLDecl {
     }
 }
 struct EPDSLInstance {
-    public EPDSLDecl[] decls;
+    private EPDSLDecl[] decls;
     public static EPDSLInstance parse(string data) {
         EPDSLInstance inst;
         EPDSLDecl[] decls = [];
         foreach(line; splitLines(data)) {
+            if(line[0] == '#') continue;
             EPDSLDecl decl;
             string[] parts = line.split(" ");
             decl.name = parts[0];
